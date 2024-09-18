@@ -1,5 +1,10 @@
 public boolean shift = true;
 
+
+
+/* ADD RANDOM COLORS TO FEATHERS
+*/
+
 void setup() {
   size(500, 500);
   noLoop();
