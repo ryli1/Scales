@@ -1,7 +1,5 @@
 public boolean shift = true;
 
-
-
 /* ADD RANDOM COLORS TO FEATHERS
 */
 
@@ -11,16 +9,16 @@ void setup() {
 }
 
 void draw() {
-  background(#536123);
+  background(#314221);
   //featherBackground();
   
-  for (int y = -200; y <= 450; y += 120){
-    for (int x = -200; x <= 400; x += 100){
+  for (int y = -200; y <= 400; y += 100){
+    for (int x = -200; x <= 1000; x += 90){
       if (shift == true) {
-        scale(x+50, y);
+        scale(x+50, y, ((int)(Math.random()*3)+1));
       }
       else {
-        scale(x, y);
+        scale(x, y, ((int)(Math.random()*3)+1));
       }
     }
     shift = !shift;
@@ -31,41 +29,102 @@ void draw() {
   }
 }
 
-void scale(int x, int y) {
-  pushMatrix();
+void scale(int x, int y, int random) {
  //Feather top
-  fill(#6b8d38);
+  pushMatrix();
+  if (random == 1) {
+    fill(#819d3f);
+
+  }
+  else {
+    fill(#9BAD1C);
+  }
   stroke(#638c61);
-  strokeWeight(3);
-  arc(100+x, 100+y, 90, 140, radians(150), radians(390), OPEN); //100, 100
+  strokeWeight(2);
+  arc(100+x, 100+y, 90, 140, radians(150), radians(390));
+  noStroke();
+  quad(63+x, 98+y, 140+x, 98+y, 138+x, 135+y, 63+x, 135+y);
  //Tip of feather curves
+  stroke(#638c61);
   beginShape();
   vertex(62+x, 135+y);
   bezierVertex(100+x, 160+y, 100+x, 180+y, 100+x, 210+y);
   bezierVertex(100+x, 180+y, 100+x, 160+y, 137+x, 135+y);
   endShape();
- //Feather Insides
+//Feather Insides
+    
   //avocado looking part
-  stroke(#5fab48);
-  fill(#715954);
+  stroke(#67a34b);
+  fill(#a3776e);
   beginShape();
   vertex(68+x, 90+y);
   bezierVertex(69+x, 30+y, 129+x, 30+y, 130+x, 90+y);
   bezierVertex(132+x, 135+y, 66+x, 135+y, 68+x, 90+y);
   endShape();
+  
+ //LINES
+  //middle line
+  stroke(60, 58, 10, 150);
+  strokeWeight(0.0005);
+  line(100+x, 30+y, 100+x, 180+y);
+  //feather lines
+  line(100+x, 170+y, 142+x, 110+y);
+  line(100+x, 170+y, 58+x, 110+y);
+  
+  line(100+x, 165+y, 142+x, 100+y); //
+  line(100+x, 165+y, 58+x, 100+y);
+  
+  line(100+x, 160+y, 142+x, 90+y);
+  line(100+x, 160+y, 58+x, 90+y);
+  
+  line(100+x, 155+y, 142+x, 80+y); //
+  line(100+x, 155+y, 58+x, 80+y);
+  
+  line(100+x, 150+y, 143+x, 70+y); 
+  line(100+x, 150+y, 57+x, 70+y);
+  
+  line(100+x, 145+y, 143+x, 60+y); //
+  line(100+x, 145+y, 57+x, 60+y);
+  
+  line(100+x, 140+y, 138+x, 55+y);
+  line(100+x, 140+y, 62+x, 55+y);
+  
+  line(100+x, 135+y, 136+x, 45+y); //
+  line(100+x, 135+y, 64+x, 45+y);
+  
+  line(100+x, 125+y, 129+x, 45+y); //
+  line(100+x, 125+y, 67+x, 45+y);
+    
+  line(100+x, 122.5+y, 128+x, 42.5+y);
+  line(100+x, 122.5+y, 72+x, 42.5+y);
+  
+  line(100+x, 120+y, 125+x, 40+y);
+  line(100+x, 120+y, 75+x, 40+y);
+  
+  line(100+x, 115+y, 120+x, 35+y);
+  line(100+x, 115+y, 80+x, 35+y);
+  
+  line(100+x, 110+y, 115+x, 31+y);
+  line(100+x, 110+y, 85+x, 31+y);
+  
+  line(100+x, 100+y, 107+x, 28+y);
+  line(100+x, 100+y, 93+x, 28+y);
+  
+  noFill();
+  stroke(#638c61);
+  strokeWeight(2);
+  arc(100+x, 100+y, 90, 140, radians(150), radians(390));
+
   //blue part
   stroke(#144743);
   strokeWeight(1);
-  fill(#628ae7);
+  fill(#4ea1ac);
   ellipse(99+x, 95+y, 40, 33);
   //dark middle arc
   noStroke();
   fill(#170648);
   arc(100+x, 95+y, 28, 25, radians(110), radians(425));
-  //middle line
-  stroke(#293046);
-  strokeWeight(0.5);
-  //line(100+x, 100+y, 100+x, 180+y);
+  
   popMatrix();
 }
 
