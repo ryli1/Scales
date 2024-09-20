@@ -46,7 +46,7 @@ void scale(int x, int y) {
   endShape();
  //Feather Insides
   //avocado looking part
-  /*stroke(#5fab48);
+  stroke(#5fab48);
   fill(#715954);
   beginShape();
   vertex(68+x, 90+y);
@@ -65,7 +65,7 @@ void scale(int x, int y) {
   //middle line
   stroke(#293046);
   strokeWeight(0.5);
-  //line(100+x, 100+y, 100+x, 180+y);*/
+  //line(100+x, 100+y, 100+x, 180+y);
   popMatrix();
 }
 
