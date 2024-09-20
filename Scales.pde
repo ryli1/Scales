@@ -6,7 +6,7 @@ public boolean shift = true;
 void setup() {
   size(500, 500);
   frameRate(1);
-  //noLoop();
+  noLoop();
 }
 
 void draw() {
