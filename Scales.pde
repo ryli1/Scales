@@ -5,7 +5,8 @@ public boolean shift = true;
 
 void setup() {
   size(500, 500);
-  noLoop();
+  frameRate(1);
+  //noLoop();
 }
 
 void draw() {
@@ -15,7 +16,7 @@ void draw() {
   for (int y = -200; y <= 400; y += 100){
     for (int x = -200; x <= 1000; x += 90){
       if (shift == true) {
-        scale(x+50, y, ((int)(Math.random()*3)+1));
+        scale(x+50, y, ((int)(Math.random()*3)));
       }
       else {
         scale(x, y, ((int)(Math.random()*3)+1));
@@ -52,15 +53,7 @@ void scale(int x, int y, int random) {
   bezierVertex(100+x, 180+y, 100+x, 160+y, 137+x, 135+y);
   endShape();
 //Feather Insides
-    
-  //avocado looking part
-  stroke(#67a34b);
-  fill(#a3776e);
-  beginShape();
-  vertex(68+x, 90+y);
-  bezierVertex(69+x, 30+y, 129+x, 30+y, 130+x, 90+y);
-  bezierVertex(132+x, 135+y, 66+x, 135+y, 68+x, 90+y);
-  endShape();
+
   
  //LINES
   //middle line
@@ -115,6 +108,16 @@ void scale(int x, int y, int random) {
   strokeWeight(2);
   arc(100+x, 100+y, 90, 140, radians(150), radians(390));
 
+  //avocado looking part
+  stroke(#66B93E);
+  strokeWeight(3);
+  fill(#CE8C34);
+  beginShape();
+  vertex(68+x, 90+y);
+  bezierVertex(69+x, 30+y, 129+x, 30+y, 130+x, 90+y);
+  bezierVertex(132+x, 135+y, 66+x, 135+y, 68+x, 90+y);
+  endShape();
+  
   //blue part
   stroke(#144743);
   strokeWeight(1);
