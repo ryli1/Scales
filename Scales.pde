@@ -13,8 +13,8 @@ void draw() {
   background(#314221);
   //featherBackground();
   
-  for (int y = -200; y <= 400; y += 100){
-    for (int x = -200; x <= 1000; x += 90){
+  for (int y = -100; y <= 400; y += 120){
+    for (int x = -200; x <= 1000; x += 100){
       if (shift == true) {
         scale(x+50, y, ((int)(Math.random()*3)));
       }
