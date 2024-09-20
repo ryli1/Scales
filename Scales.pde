@@ -49,7 +49,7 @@ void scale(int x, int y, int random) {
   stroke(#638c61);
   beginShape();
   vertex(62+x, 135+y);
-  bezierVertex(100+x, 160+y, 100+x, 180+y, 100+x, 210+y);
+  bezierVertex(100+x, 160+y, 100+x, 180+y, 100+x, 250+y);
   bezierVertex(100+x, 180+y, 100+x, 160+y, 137+x, 135+y);
   endShape();
 //Feather Insides
